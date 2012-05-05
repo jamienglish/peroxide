@@ -160,13 +160,7 @@ function _peroxide_process_sass($theme, $sass) {
 function _peroxide_init() {
   $path = drupal_get_path('theme_engine', 'peroxide');
   include_once $path . 'phamlp/haml/HamlParser.php';
-
-  // Test for Ruby version first
-  @exec("sass -v", $op, $ret);
-  if($ret != 0) {
-    include_once $path . 'phamlp/sass/SassParser.php';
-  }
-
+  include_once $path . 'phamlp/sass/SassParser.php';
   include_once $path . 'lessphp/lessc.inc.php';
 }
 
